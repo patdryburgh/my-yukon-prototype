@@ -23,7 +23,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        {% include navigation.html %}
+        {% unless page.state == "logged_out" %}
+          {% include navigation.html %}
+        {% endunless %}
 
       </div>
 
@@ -35,7 +37,7 @@
 
     </main>
 
-    <script src="{{ '/js/footer_scripts.js' | absolute_url }}"></script>
+    <!-- <script src="{{ '/js/footer_scripts.js' | absolute_url }}"></script> -->
 
   </body>
 
