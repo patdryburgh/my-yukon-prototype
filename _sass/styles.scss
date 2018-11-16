@@ -1,0 +1,14 @@
+.skip-navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 10px;
+  text-align: center;
+  .btn {
+    margin-top: -120px;
+    &:focus {
+      margin-top: 0;
+    }
+  }
+}
