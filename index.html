@@ -1,0 +1,45 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+title: Welcome
+layout: default
+state: logged_out
+---
+
+<div class="row my-3">
+  <div class="col-md-8">
+    <h1>
+      Welcome to My Yukon!
+    </h1>
+    <ul>
+      <li>
+        Access to all services provided by the Yukon Government.
+      </li>
+      <li>
+        Your personal details saved to make filling out forms easier.
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <form class="card-body" action="{{ '/my-forms/' | absolute_url }}">
+        <h5 class="card-title">Log In</h5>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </form>
+    </div>
+  </div>
+</div>
