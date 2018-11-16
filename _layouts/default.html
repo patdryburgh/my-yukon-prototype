@@ -11,17 +11,23 @@
       </a>
     </div>
 
-    <header class="header container wrapper">
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
 
-      <h1 class="logo">
-        <a href="{{ site.url }}" class="title__link">
+      <div class="container">
+
+        <a href="{{ site.url }}" class="navbar-brand">
           <img src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" />
         </a>
-      </h1>
 
-      {% include navigation.html %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    </header>
+        {% include navigation.html %}
+
+      </div>
+
+    </nav>
 
     <main id="main">
 

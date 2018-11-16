@@ -1,9 +1,9 @@
-<nav class="menu" {% if include.header == 'true' %}id="js-menu"{% endif %}>
-  <ul class="menu__list">
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav ml-auto">
     {% for link in site.data.menu %}
-      <li class="menu__listitem">
-        <a href="{{ link.url | absolute_url }}">{{ link.title }}</a>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ link.url | absolute_url }}">{{ link.title }}</a>
       </li>
     {% endfor %}
   </ul>
-</nav>
+</div>
