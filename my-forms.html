@@ -4,11 +4,33 @@ layout: default
 permalink: /my-forms/
 ---
 
-<div class="my-3">
-  <h2>My Forms</h2>
-
-  <section>
-    <h3>Business</h3>
-  </section>
-
+<div class="pt-5 pb-3 text-center">
+    <h2>Forms</h2>
+    <form class="mt-4 mx-auto" style="max-width: 24rem">
+      <label class="sr-only" for="search">Search for Forms</label>
+      <input type="search" class="form-control" placeholder="Search for forms…" id="search" autocomplete=false>
+    </form>
 </div>
+
+{% for category_hash in site.data.forms %}
+{% assign category = category_hash[1] %}
+
+  <div class="row my-5">
+
+    <h4 class="col-12">{{ category.name }}</h4>
+
+    {% for form in category.forms %}
+
+      <div class="col-sm-6 col-md-4 my-3">
+        <a href="{{ form.url }}" class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ form.name }}</h5>
+          </div>
+        </a>
+      </div>
+
+    {% endfor %}
+  
+  </div>
+
+{% endfor %}
