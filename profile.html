@@ -4,17 +4,76 @@ layout: default
 permalink: /my-profile/
 ---
 
-<div>
-    <div class="py-5 text-center">
-        <h2>Your Profile</h2>
-        <h6><a href="{{ '/my-profile/edit' | absolute_url}}">Edit your Profile <i class="fas fa-pencil-alt"></i></a></h6>
-        <p class="lead">Your personal information</p>
+<style>
+    .card {
+        background-color: #f9f9f9;
+    }
 
-        <div class="py-5 text-left">
-            <label>First name</label>
-            <p>John</p>
-            <label>Last name</label>
-            <p>Smith</p>
+    .list-group-item {
+        background-color: transparent;
+    }
+</style>
+
+
+<div class="py-5 text-center">
+    <h2>Your Profile</h2>
+    <h6><a href="{{ '/my-profile/edit' | absolute_url}}">Edit your Profile <i class="fas fa-pencil-alt"></i></a></h6>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                Personal Information
+            </div>
+            <div class="card-body">
+                <div>John Smith</div>
+                <div>50 Fireweed Drive Y1A 5T8 Whitehorse YT</div>
+                <div>john.smith@example.ca</div>
+                <div>867-334-0456</div>
+                <div>Born on Feb 24th 1982</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                YG Licenses
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Health Care #475-6778-2345</li>
+                    <li class="list-group-item">Drivers License #446-2235</li>
+                    <li class="list-group-item">Fishing License #73-13-543</li>
+                    <li class="list-group-item">Hunting License #6642-132</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                Vehicles
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Subaru Outback 2005 - Registration expires 07/2019</li>
+                    <li class="list-group-item">Toyota Tacoma 2010 - <span class="text-danger">Registration expires 12/2018</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                Houses
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">25 Birch Street, Whitehorse</li>
+                    <li class="list-group-item">72 Lewes Boulevard, Whitehorse</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
