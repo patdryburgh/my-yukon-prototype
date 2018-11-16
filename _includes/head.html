@@ -1,0 +1,24 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    {% unless page.home == true %}
+      {% if page.browser_title %}
+        {{ page.browser_title }} &mdash;
+      {% elsif page.title != "" %}
+        {{ page.title }} &mdash;
+      {% endif %}
+    {% endunless %}
+    {{ site.title }}
+  </title>
+  
+  <meta name="description" content="{% if page.home %}{{ site.description }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.rss }}" />
+  <link rel="alternate" title="{{ site.title }}" type="application/json" href="{{ "/feed/index.json" | absolute_url }}" />
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | absolute_url }}?{{site.time | date: '%s%N'}}">
+
+</head>
