@@ -47,15 +47,15 @@ function setup_angela() {
     clear_forms();
     add_form({
         'href': '/images/fuelpermit.pdf',
-        'page_title': 'Your Fuel Permit',
+        'page_title': 'Firewood Permit',
     })
     add_form({
         'href': '#',
-        'page_title': 'Zoning change application form'
+        'page_title': "Homeowners' Grant"
     })
     add_form({
         'href': '#',
-        'page_title': 'Title change form - Local Residence'
+        'page_title': 'Home Business Application'
     })
     add_form({
         'href': '#',
@@ -63,11 +63,11 @@ function setup_angela() {
     })
     add_form({
         'href': '#',
-        'page_title': 'Professional Services Board - Censure appeal'
+        'page_title': 'Renew Business Name'
     })
     add_form({
         'href': '#',
-        'page_title': 'Business License Application - Class R'
+        'page_title': 'Business License Application'
     })
     localStorage.setItem('iAm', 'angela');
 }
@@ -97,7 +97,7 @@ function setup_jacob() {
     })
     add_form({
         'href': '#',
-        'page_title': 'Municipal Permit'
+        'page_title': 'Enterprise Trade Fund Application'
     })
     localStorage.setItem('iAm','jacob');
 }

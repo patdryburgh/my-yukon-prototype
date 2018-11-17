@@ -1,13 +1,11 @@
-// Here You can type your custom JavaScript...
-
 var windowLocation = encodeURI(window.location);
 var pageTitle = encodeURI(document.title);
-var myYukonHost = 'http://127.0.0.1:4000/save-form/';
-jQuery("#navbar #wb-bnr, body.ext-border-box, #navbar #wb-bnr ").prepend(
+var myYukonHost = 'http://localhost:4000/save-form/';
+jQuery("#navbar #wb-bnr, body.ext-border-box").prepend(
     "<div class='container'>" +
     "<div class='row'><div class='col-xs-6'>" +
-    "<div class='row pull-left'>" +
-    "<a class='btn btn-primary'style='background-color:#ffcd57'"+
+    "<div class='row pull-left' style='margin: 2em 1em'>" +
+    "<a style='background-color:#ffcd57; border-radius: 4px; padding: 1em; text-decoration: none; color: #000'"+
     " href='"+
     myYukonHost +
     "?theForm=" +
