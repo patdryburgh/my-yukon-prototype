@@ -1,0 +1,37 @@
+---
+title: Edit Profile
+layout: default
+permalink: /my-profile/edit-houses/
+---
+
+
+<div class="py-5 text-center">
+    <h2>Edit Your Profile</h2>
+    <p class="lead">Edit your personal information and select the YG services you frequently use</p>
+</div>
+
+<div class="col-md-12 my-3">
+    <h4 class="mb-3">YG Information</h4>
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-house" role="tab" aria-controls="home">25 Birch Street</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" role="tab" aria-controls="profile">72 Lewes Boulevard</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-house" role="tabpanel" aria-labelledby="list-home-list">
+                    <form>
+                        <div class="form-group">
+                            <label for="address">House Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Apt #, street, town">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
