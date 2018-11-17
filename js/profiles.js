@@ -40,18 +40,11 @@ var profiles = {
             {
                 "name": "Subaru Outback 2005",
                 "expiry": "2019-07-31"
-            },
-            {
-                "name": "Toyota Tacoma 2010",
-                "expiry": ""
             }
         ],
         "property": [
             {
                 "name": "50 Fireweed Drive, Whitehorse",
-            },
-            {
-                "name": "72 Lewes Boulevard, Whitehorse",
             }
         ]
     },
