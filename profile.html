@@ -4,6 +4,14 @@ layout: default
 permalink: /my-profile/
 ---
 
+<script>
+    $(document).ready(function(){
+        console.log(profiles);
+        var p = profiles[0];
+        $("#name").html(p.firstName + " " + p.lastName);
+    });
+</script>
+
 <div class="py-5 text-center">
     <h2>Hi, Angela!</h2>
     <p class="lead">The weather is super cold today, eh?</p>
@@ -47,7 +55,7 @@ permalink: /my-profile/
                         <a href="{{ '/my-profile/edit-profile' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
                     <div class="card-body">
-                        <div><strong>Angela Fuller</strong></div>
+                        <div><strong id="name"></strong></div>
                         <div>50 Fireweed Drive<br> Whitehorse YT Y1A 5T8</div>
                         <div>angela.fuller@gmail.com</div>
                         <div>867-334-0456</div>
