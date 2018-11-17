@@ -4,3 +4,4 @@ http://127.0.0.1:4000/save-form/?theForm=https://starset.gov.yk.ca/&pageTitle=Ki
 
 http://127.0.0.1:4000/save-form/?theForm=http://www.gov.yk.ca/forms/forms/5000/yg5447_e.pdf&pageTitle=School%20bus%20and%20other%20student%20transportation%20options%20%7C%20Government%20of%20Yukon%20%7C%20school%20bus%20registration%20form
 
+http://127.0.0.1:4000/save-form/?theForm=https://eservices.gov.yk.ca/renew-vehicle-registration&pageTitle=Renew%20a%20vehicle%20registration%20%7C%20Government%20of%20Yukon%20%7C%20eServices
