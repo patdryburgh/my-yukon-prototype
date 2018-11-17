@@ -30,6 +30,7 @@ body {
   margin-left: -558px;
   height: 202px;
   width: 1116px;
+  max-width: 100%;
   z-index: -1;
 }
 
@@ -117,4 +118,12 @@ a {
   background: #ffcd57;
   border-color: #ffcd57;
   color: #1a1919;
+}
+
+.welcome-logo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
