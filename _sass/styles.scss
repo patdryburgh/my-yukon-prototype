@@ -38,14 +38,15 @@ h6 {
 }
 
 .aurora {
-  position: absolute;
-  top: 500px;
-  left: 50%;
-  margin-left: -558px;
+  position: relative;
   height: 202px;
   width: 1116px;
   max-width: 100%;
   z-index: -1;
+  .body--logged-out &,
+  .profile & {
+    margin-top: -120px;
+  }
 }
 
 .skip-navigation {
