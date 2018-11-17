@@ -15,12 +15,12 @@ permalink: /my-profile/edit-vehicles/
             <div class="col-md-4 mb-3">
                 <div class="list-group" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#vehicle-1" role="tab" aria-controls="home">
-                        <h5>Subaru Outback 2005</h5>
-                        <div>Registration Expires March 31<sup>st</sup>, 2020</div>
+                        <h5 class="mb-0">Subaru Outback 2005</h5>
+                        <div class="small">Registration Expires March 31<sup>st</sup>, 2020</div>
                     </a>
                     <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#vehicle-2" role="tab" aria-controls="profile">
-                        <h5>Toyota Tacoma 2010</h5>
-                        <div class="text-danger">Registration Expires December 31<sup>st</sup>, 2019</div>
+                        <h5 class="mb-0">Toyota Tacoma 2010</h5>
+                        <div class="small text-danger">Registration Expires December 31<sup>st</sup>, 2019</div>
                     </a>
                 </div>
             </div>
@@ -37,8 +37,10 @@ permalink: /my-profile/edit-vehicles/
                                 <label for="vehicleExpiry">Registration Expiry</label>
                                 <input type="date" class="form-control" id="vehicleExpiry" placeholder="" value="2020-03-31">
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="submit" class="btn btn-danger">Remove</button>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </div>
                         </form>
                     </div>
                     <div class="tab-pane fade show" id="vehicle-2" role="tabpanel" aria-labelledby="list-home-list">
@@ -52,8 +54,10 @@ permalink: /my-profile/edit-vehicles/
                                 <label for="vehicleExpiry">Registration Expiry</label>
                                 <input type="date" class="form-control" id="vehicleExpiry" placeholder="" value="2018-12-31">
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="submit" class="btn btn-danger">Remove</button>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </div>
                         </form>
                     </div>
                 </div>
