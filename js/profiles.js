@@ -2,7 +2,7 @@ var profiles = {
     "angela": {
         "id": 1,
         "notifications": "no",
-        "email": "angela.fuller@gmail.com",
+        "email": "angela@gmail.com",
         "firstName": "Angela",
         "lastName": "Fuller",
         "phone": "867-334-0456",
@@ -46,7 +46,7 @@ var profiles = {
     "jacob": {
         "id": 2,
         "notifications": "yes",
-        "email": "jacob.howard@gmail.com",
+        "email": "jacob@gmail.com",
         "firstName": "Jacob",
         "lastName": "Howard",
         "phone": "867-332-3487",
