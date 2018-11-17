@@ -49,7 +49,7 @@ permalink: /my-profile/
                     '<div><div>' + vehicle.name + '</div><small class="text-danger">Registration expires ' + vehicle.expiry + '</small></div><a href="/view-form/?form=https://eservices.gov.yk.ca/en/renew-vehicle-registration/plate%20" class="btn btn-primary ml-auto btn-sm">Renew</a>'
                 )
             } else {
-                li.append('<div>' + vehicle.name + '</div><small>Registration expires' + vehicle.expiry + '</small>');
+                li.append('<div>' + vehicle.name + '</div>');
             }
 
             $("#vehicles").append(
