@@ -25,6 +25,53 @@ function add_form(form_obj) {
     localStorage.setItem('myYukonForms', JSON.stringify(current_forms));
 }
 
+function clear_forms() {
+    localStorage.setItem('myYukonForms', '[]');
+    localStorage.setItem('iAm', 'Nobody');
+}
+
+function setup_angela() {
+    var iAm = localStorage.getItem('iAm');
+    if (iAm == 'angela') {
+        return;
+    }
+    clear_forms();
+    add_form({
+        'href': '/images/fuelpermit.pdf',
+        'page_title': 'Your Fuel Permit',
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Zoning change application form'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Title change form - Local Residence'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Taxidermy Practitioner Application'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Professional Services Board - Censure appeal'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Business License Application - Class R'
+    })
+    localStorage.setItem('iAm', 'angela');
+}
+
+function setup_jacob() {
+    var iAm = localStorage.getItem('iAm')
+    if (iAm == 'jacob') {
+        return;
+    }
+    clear_forms();
+    localStorage.setItem('iAm','jacob');
+}
+
 function get_forms() {
      savedFormsText = localStorage.getItem('myYukonForms');
     if (!savedFormsText) {

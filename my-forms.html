@@ -1,4 +1,4 @@
---- 
+---
 title: My Forms
 layout: default
 permalink: /my-forms/
@@ -13,14 +13,25 @@ permalink: /my-forms/
 
     }
 
-    $(document).ready(function() {
-      var container = $('#education'),
-          heading = $('<h4>').addClass('col-12').text('Education');
 
-      container.append(heading);
+    headings = ['Home', 'Business', 'Education']
+
+    $(document).ready(function() {
+
+      console.log(savedForms);
+      function addHeading(heading_text) {
+         var container = $('.heading'),
+          heading = $('<h4>').addClass('col-12').text(heading_text);
+
+        container.append(heading);
+      }
+       var container = $('.heading');
+
 
       $.each(savedForms,function(i,form){
-    
+        if (i % 3 == 0) {
+          addHeading(headings[i/3])
+        }
         // Let's create the DOM
         var item = $('<div>').addClass('col-sm-6 col-md-4 my-3'),
             link = $('<a>').addClass('card h-100'),
@@ -29,13 +40,13 @@ permalink: /my-forms/
             href = '/view-form/' + '?form=' + form.href;
 
             console.log(href);
-        
+
         // Add content to the DOM
         title.text(form.page_title);
         body.append(title)
         link.attr('href',href).append(body);
         item.append(link);
-        
+
         // Append the item to the container
         item.appendTo(container);
       });
@@ -43,19 +54,19 @@ permalink: /my-forms/
 
 
     // $.each(savedForms,function(i,form){
-    
+
     //     // Let's create the DOM
     //     var item = $('<div>').addClass('col-sm-6 col-md-4 my-3'),
     //         link = $('<a>').addClass('card h-100'),
     //         body = $('<div>').addClass('card-body'),
     //         title = $('<h5>').addClass('card-title');
-        
+
     //     // Add content to the DOM
     //     title.text(form.page_title);
     //     body.append(title)
     //     link.attr('href',form.href).append(body);
     //     item.append(link);
-        
+
     //     // Append the item to the container
     //     item.appendTo(container);
     // });
@@ -63,6 +74,7 @@ permalink: /my-forms/
 
 <div class="pt-5 text-center">
     <h2>Saved Forms</h2>
+
     <form
       class="mt-4 mx-auto"
       style="max-width: 24rem"
@@ -70,32 +82,9 @@ permalink: /my-forms/
       method="get"
       target="_blank"
     >
-      <label class="sr-only" for="search">Search for Forms</label>
+
+          <label class="sr-only" for="search">Search for Forms</label>
       <input type="search" name="query" class="form-control" placeholder="Search for forms…" id="search" autocomplete=false>
     </form>
+    <div class='heading row'></div>
 </div>
-
-<div id="education" class="row my-5"></div>
-
-{% for category_hash in site.data.forms %}
-{% assign category = category_hash[1] %}
-
-<div class="row my-5">
-
-  <h4 class="col-12">{{ category.name }}</h4>
-
-  {% for form in category.forms %}
-
-    <div class="col-sm-6 col-md-4 my-3">
-     <a href="{{ form.url }}" class="card h-100">
-       <div class="card-body">
-         <h5 class="card-title">{{ form.name }}</h5>
-       </div>
-     </a>
-    </div>
-
- {% endfor %}
-
-</div>
-
-{% endfor %}
