@@ -15,13 +15,16 @@
         var notifications = get_notifications();
           jQuery('.alerts').html('');
         jQuery.each(notifications, function (notif_id, notif) {
-          jQuery('.alerts').append(
-            "<div class='alert alert-primary' role='alert' data-href='" +
-            notif.form +
-            "'>" +
-            notif.text +
-            " &nbsp; <a href='#' class='add'>Add Form</a> - <a href='#' class='dismiss'>Dismiss</a></div>"
-          )
+
+          var alert = $('<div>').addClass('alert alert-success').attr('role', 'alert').attr('data-href', notif.form),
+              close = "<a href='#' class='close dismiss' aria-hidden='true'>&times;</a>",
+              heading = $('<h5>').addClass('alert-heading').text(notif.heading),
+              text = $('<p>').addClass('mb-0').text(notif.text),
+              button = " &nbsp;<a href='#' class='add btn btn-success btn-sm'>Add Form</a>";
+
+          text.append(button)
+          alert.append(close, heading, text);
+          jQuery('.alerts').append(alert);
         });
         jQuery('.add').click(function (element) {
           var notif_href = jQuery(element.target).parent().attr('data-href');
@@ -34,11 +37,13 @@
       }
 
       jQuery(document).ready(function () {
-
-      draw_notifications()
+        draw_notifications()
       })
     </script>
-    <div class='alerts'>
+
+    <div class="container">
+      <div class='alerts my-3'>
+      </div>
     </div>
    <!--  <div class="alert alert-primary" role="alert">
       You registered for Kindergarden - you probably need to sign up for the School Bus
