@@ -14,7 +14,10 @@ permalink: /my-forms/
     }
 
     $(document).ready(function() {
-      container = $('#forms');
+      var container = $('#education'),
+          heading = $('<h4>').addClass('col-12').text('Education');
+
+      container.append(heading);
 
       $.each(savedForms,function(i,form){
     
@@ -66,5 +69,27 @@ permalink: /my-forms/
     </form> -->
 </div>
 
+<div id="education" class="row my-5"></div>
 
-<div id="forms" class="row my-5"></div>
+{% for category_hash in site.data.forms %}
+{% assign category = category_hash[1] %}
+
+<div class="row my-5">
+
+  <h4 class="col-12">{{ category.name }}</h4>
+
+  {% for form in category.forms %}
+
+    <div class="col-sm-6 col-md-4 my-3">
+     <a href="{{ form.url }}" class="card h-100">
+       <div class="card-body">
+         <h5 class="card-title">{{ form.name }}</h5>
+       </div>
+     </a>
+    </div>
+
+ {% endfor %}
+
+</div>
+
+{% endfor %}
