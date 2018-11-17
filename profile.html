@@ -17,14 +17,14 @@ permalink: /my-profile/
 
 <div class="py-5 text-center">
     <h2>Your Profile</h2>
-    <h6><a href="{{ '/my-profile/edit' | absolute_url}}">Edit your Profile <i class="fas fa-pencil-alt"></i></a></h6>
 </div>
 
 <div class="row mb-4">
     <div class="col-md-6 mb-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header d-flex">
                 Personal Information
+                <a href="{{ '/my-profile/edit-profile' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
             </div>
             <div class="card-body">
                 <div>John Smith</div>
@@ -37,43 +37,40 @@ permalink: /my-profile/
     </div>
     <div class="col-md-6 mb-4">
         <div class="card h-100">
-            <div class="card-header">
-                YG Licenses
+            <div class="card-header d-flex">
+                YG Information
+                <a href="{{ '/my-profile/edit-yg-info' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
             </div>
-            <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Health Care #475-6778-2345</li>
                     <li class="list-group-item">Drivers License #446-2235</li>
                     <li class="list-group-item">Fishing License #73-13-543</li>
                     <li class="list-group-item">Hunting License #6642-132</li>
                 </ul>
-            </div>
         </div>
     </div>
     <div class="col-md-6 mb-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header d-flex">
                 Vehicles
+                <a href="{{ '/my-profile/edit-vehicles' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
             </div>
-            <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Subaru Outback 2005 - Registration expires 07/2019</li>
                     <li class="list-group-item">Toyota Tacoma 2010 - <span class="text-danger">Registration expires 12/2018</span></li>
                 </ul>
-            </div>
         </div>
     </div>
     <div class="col-md-6 mb-4">
         <div class="card h-100">
-            <div class="card-header">
+            <div class="card-header d-flex">
                 Houses
+                <a href="{{ '/my-profile/edit-houses' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
             </div>
-            <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">25 Birch Street, Whitehorse</li>
                     <li class="list-group-item">72 Lewes Boulevard, Whitehorse</li>
                 </ul>
-            </div>
         </div>
     </div>
 </div>
