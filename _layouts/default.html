@@ -4,12 +4,39 @@
   {% include head.html %}
 
   <body {% if page.state == "logged_out" %}class="body--logged-out"{% endif %}>
-      
+
     <div class="skip-navigation">
       <a href="#main" class="btn btn-primary">
         Skip to main content
       </a>
     </div>
+    <script>
+      var notifications = get_notifications();
+      jQuery(document).ready(function () {
+        jQuery.each(notifications, function (notif_id, notif) {
+          jQuery('.alerts').append(
+            "<div class='alert alert-primary' role='alert' data-href='" +
+            notif.form +
+            "'>" +
+            notif.text +
+            " &nbsp; <a href='#' class='add'>Add Form</a> - <a href='#' class='dismiss'>Dismiss</a></div>"
+          )
+        });
+        jQuery('.add').click(function (element) {
+          var notif_href = jQuery(element.target).parent().attr('data-href');
+          add_notification_form(notif_href);
+        })
+        jQuery('.dismiss').click(function (element) {
+          var notif_href = jQuery(element.target).parent().attr('data-href');
+          dismiss_notification(notif_href);
+        })
+      })
+    </script>
+    <div class='alerts'>
+    </div>
+   <!--  <div class="alert alert-primary" role="alert">
+      You registered for Kindergarden - you probably need to sign up for the School Bus
+    </div> -->
 
     {% unless page.state == "logged_out" %}
       <nav class="navbar navbar-expand-md navbar-light bg-white">
