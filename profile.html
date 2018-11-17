@@ -7,7 +7,9 @@ permalink: /my-profile/
 <script>
     $(document).ready(function(){
         var profiles = JSON.parse(localStorage.getItem('profiles'));
-        var p = profiles[0];
+        var user = localStorage.getItem('iAm');
+        if (!user) user = 'angela';
+        var p = profiles[user];
         $("#name").html(p.firstName + " " + p.lastName);
         $("#email").html(p.email);
         $("#street").html(p.street);
@@ -40,8 +42,8 @@ permalink: /my-profile/
 
 
         $.each(p.vehicles, function(index, vehicle){
-            var li = $('<li class="list-group-item d-flex align-items-start"></li>');
-            if (vehicle.expiry !== '') {
+            var li = $('<li class="list-group-item d-flex"></li>');
+            if (vehicle.expiry !== '' && vehicle.expiry) {
                 li.append(
                     '<div><div>' + vehicle.name + '</div><small class="text-danger">Registration expires ' + vehicle.expiry + '</small></div><a href="./" class="btn btn-primary ml-auto btn-sm">Renew</a>'
                 )

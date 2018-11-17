@@ -1,5 +1,5 @@
-var profiles = [
-    {
+var profiles = {
+    "angela": {
         "id": 1,
         "email": "angela.fuller@gmail.com",
         "firstName": "Angela",
@@ -54,7 +54,7 @@ var profiles = [
             }
         ]
     },
-    {
+    "jacob": {
         "id": 2,
         "email": "jacob.howard@gmail.com",
         "firstName": "Jacob",
@@ -109,7 +109,8 @@ var profiles = [
             }
         ]
     }
-];
+};
+
 
 (function populateAngela() {
     localStorage.setItem('profiles', JSON.stringify(profiles));
