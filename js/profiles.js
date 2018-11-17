@@ -30,11 +30,6 @@ var profiles = {
                 "number": "4456-234",
                 "expiry": "March 31st, 2020"
             },
-            {
-                "name": "Fishing License 2019-20",
-                "number": "06671",
-                "expiry": "March 31st, 2020"
-            }
         ],
         "vehicles": [
             {
