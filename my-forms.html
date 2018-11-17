@@ -1,50 +1,36 @@
----
+--- 
 title: My Forms
 layout: default
 permalink: /my-forms/
 ---
 
-<div class="my-3">
-  <h2>My Forms</h2>
+<div class="pt-5 pb-3 text-center">
+    <h2>Forms</h2>
+    <form class="mt-4 mx-auto" style="max-width: 24rem">
+      <label class="sr-only" for="search">Search for Forms</label>
+      <input type="search" class="form-control" placeholder="Search for forms…" id="search" autocomplete=false>
+    </form>
+</div>
 
-  <section>
-    <h3>Business</h3>
-  </section>
+{% for category_hash in site.data.forms %}
+{% assign category = category_hash[1] %}
 
+  <div class="row my-5">
 
-<script>
-    savedFormsText = localStorage.getItem('myYukonForms');
-    if (!savedFormsText) {
-        savedForms = [];
-    } else {
-        savedForms = JSON.parse(savedFormsText)
-    }
+    <h4 class="col-12">{{ category.name }}</h4>
 
-    jQuery(document).ready(function () {
+    {% for form in category.forms %}
 
-
-        jQuery(".btn").click(function (element) {
-
-            console.log(element.target);
-            var form_url = jQuery(element.target).attr('attr-href');
-            jQuery('#theiframe').attr('src', form_url);
-        })
-    });
-    </script>
-<div class='container-fluid'>
-<div class="row">
-  <div class="col-md-4 pages">
-      <div class='row py-3'>
-        <button attr-href='/images/yg4982_e.pdf' class='block btn btn-primary'>Rebate Claim Form</button>
+      <div class="col-sm-6 col-md-4 my-3">
+        <a href="{{ form.url }}" class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ form.name }}</h5>
+          </div>
+        </a>
       </div>
-      <div class='row py-3'>
 
-        <button attr-href='https://starset.gov.yk.ca' class='block btn btn-primary'>Kindergarden Registration Form</button>
-      </div>
+    {% endfor %}
+  
   </div>
-  <div class="col-md-12">
-    <iframe id='theiframe' width='100%' height='500' src='/images/yg4982_e.pdf' />
-    </div>
-</div>
 
-</div>
+{% endfor %}
