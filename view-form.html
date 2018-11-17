@@ -28,7 +28,8 @@ permalink: /view-form/
         iframe.attr('src', formURL);
         $('.submitted-btn').click(function (event) {
               add_notification({
-                text: "You have signed up for Kindergarder - Consider signing up for the bus so that you don't have to drive",
+                heading: "You have signed up for Kindergarten!",
+                text: "Consider signing up for the bus so that you don't have to drive",
                 form: "http://www.gov.yk.ca/forms/forms/5000/yg5447_e.pdf",
                 formname: "Registering for the school bus"
             });
@@ -39,9 +40,10 @@ permalink: /view-form/
 
 
 </script>
-<div class='row' style='padding-bottom: 20px'>
-<iframe frameborder="0"  width="100%" id="viewForm"></iframe>
-</div>
-<div class='row'>
-<button style="position: fixed; bottom: 0" class='submitted-btn btn btn-primary'>Submitted</button>
+
+<iframe frameborder="0"  width="100%" height="100%" id="viewForm"></iframe>
+
+<div class='my-3 text-right'>
+    <a href="{{ '/my-forms/' | absolute_url }}" class="btn btn-link text-secondary">Cancel</a>
+    <button class='submitted-btn btn btn-primary'>Submit</button>
 </div>
