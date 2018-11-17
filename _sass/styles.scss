@@ -88,3 +88,13 @@ $primary: #00818f;
   position: relative;
   top: -.5rem;
 }
+
+#searchForm input {
+  border-color: #ffcd57;
+}
+
+#searchForm .btn-primary {
+  background: #ffcd57;
+  border-color: #ffcd57;
+  color: #1a1919;
+}
