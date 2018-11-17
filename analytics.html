@@ -3,7 +3,17 @@ title: Analytics
 layout: default
 permalink: /analytics/
 ---
-<h1>Form Usage Analytics</h1>
+
+<style>
+  table a {
+    color: #000;
+  }
+</style>
+
+<div class="my-4">
+  <h2>Form Usage Analytics</h2>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -16,19 +26,25 @@ permalink: /analytics/
   <tbody>
 
     <tr>
-      <th scope="row"><a href='http://www.gov.yk.ca/forms/forms/5000/yg5447_e.pdf'>Register for a school bus</a></th>
+      <th scope="row">
+        <a href="{{ '/view-form/?form=http://www.gov.yk.ca/forms/forms/5000/yg5447_e.pdf' | absolute_url }}">Register for a school bus</a>
+      </th>
       <td>653</td>
       <td>544</td>
       <td>84%</td>
     </tr>
     <tr class='table-warning'>
-      <td scope="row"><a href="https://starset.gov.yk.ca/">Register your child for kindergarten</a></td>
+      <th scope="row">
+        <a href="{{ '/view-form/?form=https://starset.gov.yk.ca/' | absolute_url }}">Register your child for kindergarten</a>
+      </th>
       <td>372</td>
       <td>33</td>
       <td>8.8%</td>
     </tr>
     <tr>
-      <th scope="row"><a href="#">Apply for agricultural funding</a></th>
+      <th scope="row">
+        <a href="#">Apply for agricultural funding</a>
+      </th>
       <td>38</td>
       <td>22</td>
       <td>57%</td>
