@@ -1,6 +1,7 @@
 var profiles = {
     "angela": {
         "id": 1,
+        "notifications": "no",
         "email": "angela.fuller@gmail.com",
         "firstName": "Angela",
         "lastName": "Fuller",
@@ -42,7 +43,7 @@ var profiles = {
             },
             {
                 "name": "Toyota Tacoma 2010",
-                "expiry": "2018-12-31"
+                "expiry": ""
             }
         ],
         "property": [
@@ -56,6 +57,7 @@ var profiles = {
     },
     "jacob": {
         "id": 2,
+        "notifications": "yes",
         "email": "jacob.howard@gmail.com",
         "firstName": "Jacob",
         "lastName": "Howard",
