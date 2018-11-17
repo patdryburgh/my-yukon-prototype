@@ -15,20 +15,28 @@ state: logged_out
     <p class="lead">All of your Yukon Government services in one place!</p>
 </div>
 
-<div class="col-md-4 offset-md-4">
+<div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
   <div class="card">
-    <form class="card-body" action="{{ '/my-forms/' | absolute_url }}">
-      <h5 class="card-title">Log In</h5>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="name@example.com">
+    <div class="card-body">
+      <form action="{{ '/my-forms/' | absolute_url }}" method="get">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="name@example.com" name="email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        <a href="#" class="btn btn-link btn-block btn-sm">Forgot Password?</a>
+      </form>
+      <hr />
+      <div class="text-center">
+        <p class="card-text">Don't have an account?</p>
+        <a href="#" class="btn btn-secondary btn-block">Sign Up</a>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">Log In</button>
-      <a href="#" class="btn btn-link btn-block btn-sm">Forgot Password?</a>
-    </form>
+    </div>
   </div>
 </div>
+
+<img class="aurora" src="{{ '/images/Aurora-main.svg' | absolute_url }}" alt=""></div>

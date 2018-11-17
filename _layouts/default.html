@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body {% if page.state == "logged_out" %}class="body--logged-out"{% endif %}>
       
     <div class="skip-navigation">
       <a href="#main" class="btn btn-primary">
