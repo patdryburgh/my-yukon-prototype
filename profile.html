@@ -4,52 +4,29 @@ layout: default
 permalink: /my-profile/
 ---
 
-<style>
-    .card {
-        background-color: #f9f9f9;
-    }
-
-    .list-group-item {
-        background-color: transparent;
-    }
-</style>
-
-
 <div class="py-5 text-center">
     <h2>Your Profile</h2>
 </div>
 
-<div class="row">
+<div class="row profile">
 
     <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Recreation</span>
+            <span class="text-muted">Notifications</span>
             <span class="badge badge-secondary badge-pill">2</span>
         </h4>
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                    <h6 class="my-0">Firewood Permit</h6>
+                    <h6 class="my-0">Apply For School bus</h6>
                 </div>
-                <i class="fas fa-times"></i>
+                <i class="fas fa-arrow-right"></i>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                    <h6 class="my-0">Fishing License</h6>
+                    <h6 class="my-0">Renew your Fishing license. Click <a href="./">here</a> to renew</h6>
                 </div>
-                <i class="fas fa-times"></i>
-            </li>
-        </ul>
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Education</span>
-            <span class="badge badge-secondary badge-pill">1</span>
-        </h4>
-        <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                <div>
-                    <h6 class="my-0">Kindergarten Application</h6>
-                </div>
-                <i class="fas fa-times"></i>
+                <i class="fas fa-arrow-right"></i>
             </li>
         </ul>
     </div>
@@ -59,7 +36,7 @@ permalink: /my-profile/
                 <div class="card h-100">
                     <div class="card-header d-flex">
                         Personal Information
-                        <a href="{{ '/my-profile/edit-profile' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ '/my-profile/edit-profile' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
                     <div class="card-body">
                         <div>John Smith</div>
@@ -74,7 +51,7 @@ permalink: /my-profile/
                 <div class="card h-100">
                     <div class="card-header d-flex">
                         YG Information
-                        <a href="{{ '/my-profile/edit-yg-info' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ '/my-profile/edit-yg-info' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Health Care #475-6778-2345</li>
@@ -88,11 +65,13 @@ permalink: /my-profile/
                 <div class="card h-100">
                     <div class="card-header d-flex">
                         Vehicles
-                        <a href="{{ '/my-profile/edit-vehicles' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ '/my-profile/edit-vehicles' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Subaru Outback 2005 - Registration expires 07/2019</li>
-                            <li class="list-group-item">Toyota Tacoma 2010 - <span class="text-danger">Registration expires 12/2018</span></li>
+                            <li class="list-group-item">Toyota Tacoma 2010 - <span class="text-danger">Registration expires 12/2018</span>
+                                click <a href="./">here</a> to renew
+                            </li>
                         </ul>
                 </div>
             </div>
@@ -100,7 +79,7 @@ permalink: /my-profile/
                 <div class="card h-100">
                     <div class="card-header d-flex">
                         Houses
-                        <a href="{{ '/my-profile/edit-houses' | absolute_url}}" class="ml-auto">Edit <i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ '/my-profile/edit-houses' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">25 Birch Street, Whitehorse</li>
