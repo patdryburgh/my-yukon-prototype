@@ -2,17 +2,13 @@ html,
 body {
 }
 
-.body--logged-out::after {
-  content: "";
+.aurora {
   position: absolute;
   top: 500px;
   left: 50%;
   margin-left: -558px;
   height: 202px;
   width: 1116px;
-  background-image: url(/images/Aurora-main.svg);
-  background-position: bottom right;
-  background-repeat: no-repeat;
   z-index: -1;
 }
 
