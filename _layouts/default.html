@@ -11,25 +11,24 @@
       </a>
     </div>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-white">
+    {% unless page.state == "logged_out" %}
+      <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <div class="container">
 
-      <div class="container">
+          <a href="{{ site.url }}" class="navbar-brand">
+            <img src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" />
+          </a>
 
-        <a href="{{ site.url }}" class="navbar-brand">
-          <img src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" />
-        </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            {% include navigation.html %}
 
-        {% unless page.state == "logged_out" %}
-          {% include navigation.html %}
-        {% endunless %}
+        </div>
+      </nav>
+    {% endunless %}
 
-      </div>
-
-    </nav>
 
     <main id="main" class="container">
 

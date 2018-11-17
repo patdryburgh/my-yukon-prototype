@@ -7,9 +7,12 @@ layout: default
 state: logged_out
 ---
   
-<div class="py-5 text-center">
-    <h2>Welcome to My Yukon!</h2>
-    <p class="lead">A personal dashboard for your Yukon Government services</p>
+<div class="mt-5 py-5 text-center">
+    <h2 class="d-flex justify-content-center align-items-end">
+      <span class="mx-2">Welcome to</span>
+      <img src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" height="50"/>
+    </h2>
+    <p class="lead">All of your Yukon Government services in one place!</p>
 </div>
 
 <div class="col-md-4 offset-md-4">
