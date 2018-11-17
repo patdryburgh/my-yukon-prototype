@@ -6,9 +6,68 @@ permalink: /my-profile/
 
 <script>
     $(document).ready(function(){
-        console.log(profiles);
+        var profiles = JSON.parse(localStorage.getItem('profiles'));
         var p = profiles[0];
         $("#name").html(p.firstName + " " + p.lastName);
+        $("#email").html(p.email);
+        $("#street").html(p.street);
+        $("#street2").html(p.city + " " + p.province + " " + p.postalCode);
+        $("#phone").html(p.phone);
+        $("#dateOfBirth").html(p.dateOfBirth);
+        $.each(p.ygInfo, function(index, info){
+            var li = $('<li class="list-group-item"><div>' + info.name + ' #' + info.number + '</div></li>');
+            if (info.expiry !== '') {
+                li.append(
+                    '<small class="text-danger">Expires ' + info.expiry + '</small>'
+                )
+            }
+            $("#ygInfo").append(
+                li
+            );
+        });
+
+        $.each(p.licenses, function(index, license){
+            var li = $('<li class="list-group-item"><div>' + license.name + '</div></li>');
+            if (license.expiry !== '') {
+                li.append(
+                    '<small class="text-danger">Expires ' + license.expiry + '</small>'
+                )
+            }
+            $("#licenses").append(
+                li
+            );
+        });
+
+
+        $.each(p.vehicles, function(index, vehicle){
+            var li = $('<li class="list-group-item d-flex"></li>');
+            if (vehicle.expiry !== '') {
+                li.append(
+                    '<div><div>' + vehicle.name + '</div><small class="text-danger">Registration expires ' + vehicle.expiry + '</small></div><a href="./" class="btn btn-primary ml-auto btn-sm">Renew</a>'
+                )
+            } else {
+                li.append('<div>' + vehicle.name + '</div><small>Registration expires' + vehicle.expiry + '</small>');
+            }
+
+            $("#vehicles").append(
+                li
+            );
+        });
+
+        $.each(p.property, function(index, property){
+            var li = $('<li class="list-group-item d-flex"></li>');
+            if (property.expiry !== '') {
+                li.append(
+                    '<div><div>' + property.name + '</div><small class="text-danger">Property tax due by June 1st 2019 </small></div><a href="./" class="btn btn-primary ml-auto btn-sm">Renew</a>'
+                )
+            } else {
+                li.append('<div>' + property.name + '</div><small>Property tax due by June 1st 2019' + property.expiry + '</small>');
+            }
+
+            $("#property").append(
+                li
+            );
+        })
     });
 </script>
 
@@ -56,10 +115,10 @@ permalink: /my-profile/
                     </div>
                     <div class="card-body">
                         <div><strong id="name"></strong></div>
-                        <div>50 Fireweed Drive<br> Whitehorse YT Y1A 5T8</div>
-                        <div>angela.fuller@gmail.com</div>
-                        <div>867-334-0456</div>
-                        <div>Born on Feb 24th 1982</div>
+                        <div><span id="street"></span><br><span id="street2"></span></div>
+                        <div id="email"></div>
+                        <div id="phone"></div>
+                        <div id="dateOfBirth"></div>
                     </div>
                 </div>
             </div>
@@ -69,12 +128,7 @@ permalink: /my-profile/
                         YG Information
                         <a href="{{ '/my-profile/edit-yg-info' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Health Care #475-6778-2345</li>
-                            <li class="list-group-item">
-                                <div>Drivers License #446-2235</div>
-                                <small class="text-danger">Expires 24/02/2019</small>
-                            </li>
+                        <ul class="list-group list-group-flush d-flex" id="ygInfo">
                         </ul>
                 </div>
             </div>
@@ -84,15 +138,7 @@ permalink: /my-profile/
                         Permits & Licenses
                         <a href="{{ '/my-profile/edit-permits-licenses' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div>Fishing License 2019-20</div>
-                            <small>Expires March 31<sup>st</sup>, 2020</small>
-                        </li>
-                        <li class="list-group-item">
-                            <div>Hunting License 2019-20</div>
-                            <small>Expires March 31<sup>st</sup>, 2020</small>
-                        </li>
+                    <ul class="list-group list-group-flush d-flex" id="licenses">
                     </ul>
                 </div>
             </div>
@@ -102,18 +148,7 @@ permalink: /my-profile/
                         Vehicles
                         <a href="{{ '/my-profile/edit-vehicles' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div>Subaru Outback 2005</div>
-                                <small>Registration expires 07/2019</small>
-                            </li>
-                            <li class="list-group-item d-flex align-items-start">
-                                <div>
-                                    <div>Toyota Tacoma 2010</div>
-                                    <small class="text-danger">Registration expires 12/2018</small>
-                                </div>
-                                <a href="./" class="btn btn-primary ml-auto btn-sm">Renew</a>
-                            </li>
+                        <ul class="list-group list-group-flush" id="vehicles">
                         </ul>
                 </div>
             </div>
@@ -123,15 +158,7 @@ permalink: /my-profile/
                         Property
                         <a href="{{ '/my-profile/edit-houses' | absolute_url}}" class="ml-auto">Edit</a>
                     </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex align-items-start">
-                                <div>
-                                    <div>50 Fireweed Drive, Whitehorse</div>
-                                    <small class="text-danger">Property tax due by July 2<sup>nd</sup> 2019</small>
-                                </div>
-                                <a href="./" class="btn btn-primary ml-auto btn-sm">Pay</a>
-                            </li>
-                            <li class="list-group-item">72 Lewes Boulevard, Whitehorse</li>
+                        <ul class="list-group list-group-flush" id="property">
                         </ul>
                 </div>
             </div>

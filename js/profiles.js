@@ -27,12 +27,12 @@ var profiles = [
             {
                 "name": "Hunting License 2019-20",
                 "number": "4456-234",
-                "expiry": ""
+                "expiry": "March 31st, 2020"
             },
             {
                 "name": "Fishing License 2019-20",
                 "number": "06671",
-                "expiry": ""
+                "expiry": "March 31st, 2020"
             }
         ],
         "vehicles": [
@@ -110,3 +110,7 @@ var profiles = [
         ]
     }
 ];
+
+(function populateAngela() {
+    localStorage.setItem('profiles', JSON.stringify(profiles));
+})();
