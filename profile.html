@@ -10,6 +10,7 @@ permalink: /my-profile/
         var user = localStorage.getItem('iAm');
         if (!user) user = 'angela';
         var p = profiles[user];
+        $("#greetings").html("Hi, " + p.firstName + "!");
         $("#name").html(p.firstName + " " + p.lastName);
         $("#email").html(p.email);
         $("#street").html(p.street);
@@ -43,7 +44,7 @@ permalink: /my-profile/
 
         $.each(p.vehicles, function(index, vehicle){
             var li = $('<li class="list-group-item d-flex"></li>');
-            if (vehicle.expiry !== '' && vehicle.expiry) {
+            if (vehicle.expiry !== '') {
                 li.append(
                     '<div><div>' + vehicle.name + '</div><small class="text-danger">Registration expires ' + vehicle.expiry + '</small></div><a href="./" class="btn btn-primary ml-auto btn-sm">Renew</a>'
                 )
@@ -74,7 +75,7 @@ permalink: /my-profile/
 </script>
 
 <div class="py-5 text-center">
-    <h2>Hi, Angela!</h2>
+    <h2 id="greetings"></h2>
     <p class="lead">The weather is super cold today, eh?</p>
 </div>
 
