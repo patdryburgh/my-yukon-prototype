@@ -22,6 +22,10 @@ body {
   height: 100%;
 }
 
+.navbar {
+  min-height: min-content;
+}
+
 .aurora {
   position: absolute;
   top: 500px;
