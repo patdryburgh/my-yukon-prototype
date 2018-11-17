@@ -57,7 +57,7 @@ permalink: /my-profile/
         });
 
         $.each(p.property, function(index, property){
-            var li = $('<li class="list-group-item d-flex"></li>');
+            var li = $('<li class="list-group-item d-flex align-items-start"></li>');
             if (property.expiry !== '') {
                 li.append(
                     '<div><div>' + property.name + '</div><small class="text-danger">Property tax due by June 1st 2019 </small></div><a href="./" class="btn btn-primary ml-auto btn-sm">Renew</a>'
