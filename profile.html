@@ -7,7 +7,9 @@ permalink: /my-profile/
 <script>
     $(document).ready(function(){
         var profiles = JSON.parse(localStorage.getItem('profiles'));
-        var p = profiles[0];
+        var user = localStorage.getItem('iAm');
+        if (!user) user = 'angela';
+        var p = profiles[user];
         $("#name").html(p.firstName + " " + p.lastName);
         $("#email").html(p.email);
         $("#street").html(p.street);
