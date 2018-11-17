@@ -1,4 +1,4 @@
---- 
+---
 title: My Forms
 layout: default
 permalink: /my-forms/
@@ -10,5 +10,41 @@ permalink: /my-forms/
   <section>
     <h3>Business</h3>
   </section>
+
+
+<script>
+    savedFormsText = localStorage.getItem('myYukonForms');
+    if (!savedFormsText) {
+        savedForms = [];
+    } else {
+        savedForms = JSON.parse(savedFormsText)
+    }
+
+    jQuery(document).ready(function () {
+
+
+        jQuery(".btn").click(function (element) {
+
+            console.log(element.target);
+            var form_url = jQuery(element.target).attr('attr-href');
+            jQuery('#theiframe').attr('src', form_url);
+        })
+    });
+    </script>
+<div class='container-fluid'>
+<div class="row">
+  <div class="col-md-4 pages">
+      <div class='row py-3'>
+        <button attr-href='/images/yg4982_e.pdf' class='block btn btn-primary'>Rebate Claim Form</button>
+      </div>
+      <div class='row py-3'>
+
+        <button attr-href='https://starset.gov.yk.ca' class='block btn btn-primary'>Kindergarden Registration Form</button>
+      </div>
+  </div>
+  <div class="col-md-12">
+    <iframe id='theiframe' width='100%' height='500' src='/images/yg4982_e.pdf' />
+    </div>
+</div>
 
 </div>

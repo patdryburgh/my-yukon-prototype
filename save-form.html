@@ -1,0 +1,38 @@
+<script>
+    savedFormsText = localStorage.getItem('myYukonForms');
+    if (!savedFormsText) {
+        savedForms = [];
+    } else {
+        savedForms = JSON.parse(savedFormsText)
+
+    }
+
+    searchParams = new URLSearchParams(window.location.search);
+
+    var referred_form = searchParams.get('theForm');
+    var pageTitle = searchParams.get('pageTitle');
+    console.log(pageTitle);
+
+    console.log(referred_form)
+    var already_saved = false;
+    for (formIndex in savedForms) {
+        if (savedForms[formIndex].href == referred_form) {
+            already_saved = true;
+        }
+        console.log(already_saved);
+    }
+    if (!already_saved) {
+        savedForms.push({
+            'href': referred_form,
+            'page_title': pageTitle
+        });
+    }
+
+
+    localStorage.setItem('myYukonForms', JSON.stringify(savedForms));
+
+    console.log(savedForms);
+
+    window.location = '/my-forms/'
+
+</script>
