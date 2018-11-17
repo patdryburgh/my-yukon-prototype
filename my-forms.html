@@ -21,7 +21,7 @@ permalink: /my-forms/
       console.log(savedForms);
       function addHeading(heading_text) {
          var container = $('.heading'),
-          heading = $('<h4>').addClass('col-12').text(heading_text);
+          heading = $('<h4>').addClass('col-12 mt-4').text(heading_text);
 
         container.append(heading);
       }
@@ -72,19 +72,24 @@ permalink: /my-forms/
     // });
 </script>
 
-<div class="pt-5 text-center">
-    <h2>Saved Forms</h2>
-
-    <form
-      class="mt-4 mx-auto"
-      style="max-width: 24rem"
-      action="https://yukon.ca/en/search"
-      method="get"
-      target="_blank"
-    >
-
-          <label class="sr-only" for="search">Search for Forms</label>
+<div class="py-5 text-center">
+  <h2>Saved Forms</h2>
+  <form
+        class="mt-4 mx-auto"
+        id="searchForm"
+        style="max-width: 24rem"
+        action="https://yukon.ca/en/search"
+        method="get"
+        target="_blank"
+      >
+    <label class="sr-only" for="search">Search for Forms</label>
+    <div class="input-group mb-3">
       <input type="search" name="query" class="form-control" placeholder="Search for forms…" id="search" autocomplete=false>
-    </form>
-    <div class='heading row'></div>
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </form>
 </div>
+
+<div class='forms heading row'></div>

@@ -48,7 +48,7 @@ body {
   }
 }
 
-$primary: #00818f;
+$primary: #0097a9;
 
 .btn-primary,
 .list-group-item.active {
@@ -63,6 +63,14 @@ $primary: #00818f;
 .btn-primary:hover {
   background-color: darken($primary, 5%);
   border-color: darken($primary, 5%);
+}
+
+a {
+  color: $primary;
+  &:hover,
+  &:focus {
+    color: darken($primary, 15%);
+  }
 }
 
 .profile {
@@ -84,7 +92,25 @@ $primary: #00818f;
   }
 }
 
+.forms .card::after {
+  content: "";
+  height: 12px;
+  width: 50%;
+  background-color: $primary;
+  margin: 0 auto;
+}
+
 .nav-link .badge {
   position: relative;
   top: -.5rem;
+}
+
+#searchForm input {
+  border-color: #ffcd57;
+}
+
+#searchForm .btn-primary {
+  background: #ffcd57;
+  border-color: #ffcd57;
+  color: #1a1919;
 }
