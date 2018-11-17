@@ -12,47 +12,31 @@ permalink: /my-profile/edit-yg-info/
     <div class="col-md-12 my-3">
         <h4 class="mb-3">YG Information</h4>
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-4 mb-3">
                 <div class="list-group" id="list-tab" role="tablist">
                     <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Health Care Number</a>
                     <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Drivers License</a>
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Hunting License</a>
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Fishing License</a>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                        <h5>Health Care Number</h5>
                         <form>
                             <div class="form-group">
-                                <label for="healthCareNumber">Health Care Number</label>
                                 <input type="text" class="form-control" id="healthCareNumber" placeholder="Health Care #">
                             </div>
                             <button type="submit" class="btn btn-primary">Save</button>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        <h5>Drivers License</h5>
                         <form>
                             <div class="form-group">
-                                <label for="driversLicense">Drivers License</label>
                                 <input type="text" class="form-control" id="driversLicense" placeholder="Drivers License #">
                             </div>
                             <button type="submit" class="btn btn-primary">Save</button>
                         </form>
-                    </div>
-                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list"><form>
-                        <div class="form-group">
-                            <label for="huntingLicense">Hunting License</label>
-                            <input type="text" class="form-control" id="huntingLicense" placeholder="Hunting License #">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </form></div>
-                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                        <div class="form-group">
-                            <label for="fishingLicense">Fishing License</label>
-                            <input type="text" class="form-control" id="fishingLicense" placeholder="Fishing License #">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </div>
