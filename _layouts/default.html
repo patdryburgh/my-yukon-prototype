@@ -27,10 +27,10 @@
     };
 
     var username = getUrlParameter('email');
-    if (username == 'angela@yukon.ca') {
+    if (username == 'angela.fuller@gmail.com') {
       setup_angela();
     }
-    if (username == 'jacob@yukon.ca') {
+    if (username == 'jacob.howard@gmail.com') {
       setup_jacob();
     }
 
@@ -53,11 +53,13 @@
           jQuery('.alerts').append(alert);
         });
         jQuery('.add').click(function (element) {
-          var notif_href = jQuery(element.target).parent().attr('data-href');
+          console.log('adding')
+          var notif_href = jQuery(element.target).parent().parent().attr('data-href');
+          console.log(notif_href)
           add_notification_form(notif_href);
         })
         jQuery('.dismiss').click(function (element) {
-          var notif_href = jQuery(element.target).parent().attr('data-href');
+          var notif_href = jQuery(element.target).parent().parent().attr('data-href');
           dismiss_notification(notif_href);
         })
       }

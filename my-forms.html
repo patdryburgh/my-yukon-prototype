@@ -13,8 +13,10 @@ permalink: /my-forms/
 
     }
 
-
-    headings = ['Home', 'Business', 'Education']
+    headings = JSON.parse(localStorage.getItem('formHeadings'))
+    if (!headings){
+      headings = ['Home', 'Business', 'Education'];
+    }
 
     $(document).ready(function() {
 

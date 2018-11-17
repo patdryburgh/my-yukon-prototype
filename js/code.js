@@ -21,7 +21,15 @@ function get_notifications() {
 
 function add_form(form_obj) {
     var current_forms = get_forms();
+
+    for (formIndex in savedForms) {
+        if (savedForms[formIndex].page_title == form_obj.page_title) {
+            return;
+        }
+    }
+
     current_forms.push(form_obj);
+
     localStorage.setItem('myYukonForms', JSON.stringify(current_forms));
 }
 
@@ -35,6 +43,7 @@ function setup_angela() {
     if (iAm == 'angela') {
         return;
     }
+    localStorage.setItem('formHeadings', JSON.stringify(['Home', 'Business', 'Education']));
     clear_forms();
     add_form({
         'href': '/images/fuelpermit.pdf',
@@ -68,7 +77,28 @@ function setup_jacob() {
     if (iAm == 'jacob') {
         return;
     }
+    localStorage.setItem('formHeadings', JSON.stringify(['Outdoor Recreation', 'Business', 'Education']));
     clear_forms();
+    add_form({
+        'href': '#',
+        'page_title': 'Hunting Licence - 2018'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Camping Permit'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Fishing License'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Business Registration'
+    })
+    add_form({
+        'href': '#',
+        'page_title': 'Municipal Permit'
+    })
     localStorage.setItem('iAm','jacob');
 }
 
@@ -100,6 +130,7 @@ function add_notification_form(form_href) {
                 'page_title': notifs[notif_idx].formname
             })
             dismiss_notification(form_href);
+            window.location = '/my-forms/'
             return;
         }
     }
