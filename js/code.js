@@ -67,5 +67,5 @@ function dismiss_notification(form_href) {
         }
     }
     set_notifications(new_notifs);
-    jQuery('[data-href="' + form_href + '"]').remove()
+    draw_notifications();
 }

@@ -11,8 +11,9 @@
       </a>
     </div>
     <script>
-      var notifications = get_notifications();
-      jQuery(document).ready(function () {
+      function draw_notifications() {
+        var notifications = get_notifications();
+          jQuery('.alerts').html('');
         jQuery.each(notifications, function (notif_id, notif) {
           jQuery('.alerts').append(
             "<div class='alert alert-primary' role='alert' data-href='" +
@@ -30,6 +31,11 @@
           var notif_href = jQuery(element.target).parent().attr('data-href');
           dismiss_notification(notif_href);
         })
+      }
+
+      jQuery(document).ready(function () {
+
+      draw_notifications()
       })
     </script>
     <div class='alerts'>
