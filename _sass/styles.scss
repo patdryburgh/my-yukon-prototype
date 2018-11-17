@@ -38,14 +38,19 @@ h6 {
 }
 
 .aurora {
+  display: block;
   position: relative;
-  height: 202px;
-  width: 1116px;
+  height: 151.5px;
+  width: 837px;
   max-width: 100%;
+  margin: 0 auto;
   z-index: -1;
   .body--logged-out &,
   .profile & {
     margin-top: -120px;
+  }
+  .forms + a & {
+    margin-top: 60px;
   }
 }
 
