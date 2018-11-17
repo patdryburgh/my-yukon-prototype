@@ -5,10 +5,9 @@ body {
 .body--logged-out::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 500px;
   left: 50%;
   margin-left: -558px;
-  margin-top: 50px;
   height: 202px;
   width: 1116px;
   background-image: url(/images/Aurora-main.svg);
