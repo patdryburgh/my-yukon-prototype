@@ -22,12 +22,15 @@ permalink: /my-forms/
         var item = $('<div>').addClass('col-sm-6 col-md-4 my-3'),
             link = $('<a>').addClass('card h-100'),
             body = $('<div>').addClass('card-body'),
-            title = $('<h5>').addClass('card-title');
+            title = $('<h5>').addClass('card-title'),
+            href = '/view-form/' + '?form=' + form.href;
+
+            console.log(href);
         
         // Add content to the DOM
         title.text(form.page_title);
         body.append(title)
-        link.attr('href',form.href).append(body);
+        link.attr('href',href).append(body);
         item.append(link);
         
         // Append the item to the container
