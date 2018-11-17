@@ -4,33 +4,64 @@ layout: default
 permalink: /my-forms/
 ---
 
-<div class="pt-5 pb-3 text-center">
-    <h2>Forms</h2>
-    <form class="mt-4 mx-auto" style="max-width: 24rem">
+<script>
+  savedFormsText = localStorage.getItem('myYukonForms');
+    if (!savedFormsText) {
+        savedForms = [];
+    } else {
+        savedForms = JSON.parse(savedFormsText)
+
+    }
+
+    $(document).ready(function() {
+      container = $('#forms');
+
+      $.each(savedForms,function(i,form){
+    
+        // Let's create the DOM
+        var item = $('<div>').addClass('col-sm-6 col-md-4 my-3'),
+            link = $('<a>').addClass('card h-100'),
+            body = $('<div>').addClass('card-body'),
+            title = $('<h5>').addClass('card-title');
+        
+        // Add content to the DOM
+        title.text(form.page_title);
+        body.append(title)
+        link.attr('href',form.href).append(body);
+        item.append(link);
+        
+        // Append the item to the container
+        item.appendTo(container);
+      });
+    });
+
+
+    // $.each(savedForms,function(i,form){
+    
+    //     // Let's create the DOM
+    //     var item = $('<div>').addClass('col-sm-6 col-md-4 my-3'),
+    //         link = $('<a>').addClass('card h-100'),
+    //         body = $('<div>').addClass('card-body'),
+    //         title = $('<h5>').addClass('card-title');
+        
+    //     // Add content to the DOM
+    //     title.text(form.page_title);
+    //     body.append(title)
+    //     link.attr('href',form.href).append(body);
+    //     item.append(link);
+        
+    //     // Append the item to the container
+    //     item.appendTo(container);
+    // });
+</script>
+
+<div class="pt-5 text-center">
+    <h2>Saved Forms</h2>
+    <!-- <form class="mt-4 mx-auto" style="max-width: 24rem">
       <label class="sr-only" for="search">Search for Forms</label>
       <input type="search" class="form-control" placeholder="Search for forms…" id="search" autocomplete=false>
-    </form>
+    </form> -->
 </div>
 
-{% for category_hash in site.data.forms %}
-{% assign category = category_hash[1] %}
 
-  <div class="row my-5">
-
-    <h4 class="col-12">{{ category.name }}</h4>
-
-    {% for form in category.forms %}
-
-      <div class="col-sm-6 col-md-4 my-3">
-        <a href="{{ form.url }}" class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">{{ form.name }}</h5>
-          </div>
-        </a>
-      </div>
-
-    {% endfor %}
-  
-  </div>
-
-{% endfor %}
+<div id="forms" class="row my-5"></div>
