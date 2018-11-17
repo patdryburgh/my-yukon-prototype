@@ -16,7 +16,7 @@ Laura Wells
 [Thomas Jacquin](http://www.thomasjacquin.com)
 : Design & Development
 
-[Alex Hughson]
+Alex Hughson
 : Lead Developer
 
 [Pat Dryburgh](https://patdryburgh.com)
